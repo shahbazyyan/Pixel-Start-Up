@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Model</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: 'Arial', sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    .pixels-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 20px);
+      gap: 2px;
+      width: 95%;
+      height: auto;
+      margin: auto;
+      border: 1px solid #333;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .pixel-cell-modal {
+      width: 20px;
+      height: 20px;
+      background-color: #ddd;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .pixel-cell-modal.selected {
+      background-color: #ff7f7f;
+    }
+
+    .price {
+      color: #333;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Price: <span class="price">0</span> AMD</h2>
+  <div class="pixels-box"></div>
+
+  <script>
+    let isMouseDown = false;
+    let selectedPixels = [];
+    const pixelsSectionModal = document.querySelector(".pixels-box");
+    const price = document.querySelector(".price");
+
+    for (let i = 0; i < 20000; i++) {
+      const pixelCellModal = document.createElement("div");
+      pixelCellModal.classList.add("pixel-cell-modal");
+      pixelsSectionModal.appendChild(pixelCellModal);
+
+      pixelCellModal.addEventListener("mousedown", (event) => {
+        isMouseDown = true;
+        togglePixelSelection(pixelCellModal);
+        updatePrice();
+      });
+
+      pixelCellModal.addEventListener("mouseover", () => {
+        if (isMouseDown) {
+          togglePixelSelection(pixelCellModal);
+          updatePrice();
+        }
+      });
+    }
+
+    document.addEventListener("mouseup", () => {
+      isMouseDown = false;
+    });
+
+    function togglePixelSelection(pixelCellModal) {
+      const index = selectedPixels.indexOf(pixelCellModal);
+      if (index === -1) {
+        selectedPixels.push(pixelCellModal);
+        pixelCellModal.classList.add("selected");
+      } else {
+        selectedPixels.splice(index, 1);
+        pixelCellModal.classList.remove("selected");
+      }
+    }
+
+    function updatePrice() {
+      price.textContent = selectedPixels.length * 100;
+    }
+  </script>
+</body>
+
+</html>

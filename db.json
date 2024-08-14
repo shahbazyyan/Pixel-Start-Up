@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "src": "../download.png",
+        "link": "https://www.example.com/image1",
+        "alt": "Image 1",
+        "width": 200,
+        "height": 150
+    },
+    {
+        "id": "2",
+        "src": "../download.png",
+        "link": "https://www.example.com/image1",
+        "alt": "Image 1",
+        "width": 200,
+        "height": 150
+    }
+]

@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    background: #69a16b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #38c73f;
+    border-radius: 16px;
+}
+
+header {
+    background-color: #4caf50;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    height: 50px;
+}
+
+.title {
+    font-size: 1.5em;
+}
+
+.price {
+    color: #ffd700;
+    font-size: 1em;
+}
+
+.centre-box {
+    margin-top: 10px;
+    font-size: 1em;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.left-box {
+    margin-top: 10px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #333;
+    border-radius: 16px;
+}
+
+.span_row {
+    font-size: 30px;
+    text-align: center;
+    color: #ffd700;
+}
+
+.pixel-status {
+    padding: 4px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.pixel-status span {
+    font-size: 22px;
+}
+
+.available,
+.sold {
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.available-count,
+.sold-count {
+    font-weight: bold;
+    margin-left: 5px;
+    color: #ffd700;
+}
+
+nav {
+    background-color: #333;
+    text-align: center;
+    padding: 5px 0;
+    height: 40px;
+}
+
+nav button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 5px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #45a049;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 2px 0;
+}
+
+.pixels {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 10px);
+    grid-auto-rows: minmax(min-content, max-content);
+    width: 100%;
+    padding: 1px;
+    position: relative;
+}
+
+.pixel-cell {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ccc;
+}
+
+img {
+    position: absolute;
+    opacity: 0.9;
+}
+
+.test1 {
+    margin-top: 120px;
+    margin-left: 200px;
+    width: 99px;
+    height: 99px;
+}
+
+.test2 {
+    margin-top: 320px;
+    margin-left: 500px;
+    width: 69px;
+    height: 69px;
+}
+
+.test3 {
+    margin-top: 520px;
+    margin-left: 800px;
+    width: 99px;
+    height: 99px;
+}
+
+.test4 {
+    margin-top: 120px;
+    margin-left: 1100px;
+    width: 109px;
+    height: 109px;
+}
+
+.test5 {
+    margin-top: 620px;
+    margin-left: 900px;
+    width: 89px;
+    height: 89px;
+}
+
+.test6 {
+    margin-top: 120px;
+    margin-left: 500px;
+    width: 89px;
+    height: 89px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    width: 300px;
+    border-radius: 16px;
+}
+
+.modal input,
+.modal textarea,
+.modal input[type="file"],
+.modal button {
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal textarea {
+    resize: vertical;
+}
+
+.modal button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.modal button:hover {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.modal button.cancel {
+    background-color: #ccc;
+    color: #333;
+    margin-right: 0;
+}
+
+.modal button.submit {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#buyPixelsModal.modal {
+    width: 400px;
+}
+
+#buyPixelsModal.modal button.submit,
+#buyPixelsModal.modal button.cancel {
+    width: calc(50% - 5px);
+    margin-right: 5px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+.pixels-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20px);
+    gap: 2px;
+    width: 100%;
+    max-height: 600px;
+    overflow-y: auto;
+    margin: auto;
+    border: 1px solid #333;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pixel-cell-modal {
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.pixel-cell-modal.selected {
+    background-color: #ff7f7f;
+}
+
+.price-modal {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#pixelModelModal.modal.pixel-modal {
+    height: 500px;
+    width: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    padding: 20px;
+}
+
+#pixelModelModal.modal.pixel-modal .modal-content {
+    text-align: center;
+}
+
+#pixelModelModal.modal.pixel-modal #closePixelModel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

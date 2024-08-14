@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../logo.jpg">
+    <link rel="stylesheet" href="../style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="title-box">
+            <h1 class="title"> <strong>Buy pixels</strong> for just <span class="price">100</span> AMD </h1>
+        </div>
+        <div class="centre-box">
+            <p>Let people know about you.</p>
+        </div>
+        <div class="left-box">
+            <div class="pixel-status">
+                <span class="available">Available: <span class="available-count">20.000</span>px</span>
+                <p class="span_row">|</p>
+                <span class="sold">Sold: <span class="sold-count">250</span>px</span>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <button id="buyPixelsBtn">Buy pixels</button>
+        <button id="howItWorksBtn">How it works</button>
+        <button id="contactBtn">Contact</button>
+        <button id="pixelModelBtn">Pixel Model</button>
+
+    </nav>
+
+    <div id="buyPixelsModal" class="modal">
+        <input type="text" placeholder="Paste your link">
+        <textarea placeholder="Additional message"></textarea>
+        <input type="file">
+        <button id="cancelBuyPixels">Cancel</button>
+        <button id="confirmBuyPixels">Buy Pixels</button>
+    </div>
+
+    <div id="howItWorksModal" class="modal">
+        <p>Here is how it works:</p>
+        <ul>
+            <li>Step 1: Something...</li>
+            <li>Step 2: Something else...</li>
+        </ul>
+        <button id="closeHowItWorks">Close</button>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" placeholder="Enter your full name">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" placeholder="Enter your email address">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number">
+
+        <label for="message">Message:</label>
+        <textarea id="message" placeholder="Enter your message"></textarea>
+
+        <button id="cancelContact">Cancel</button>
+        <button id="submitContact">Submit</button>
+    </div>
+
+    <div id="pixelModelModal" class="modal pixel-modal">
+        <div class="modal-content">
+            <span id="closePixelModel" class="close">&times;</span>
+            <h2>Price: <span class="price-modal">0</span> AMD</h2>
+            <div class="pixels-box"></div>
+        </div>
+    </div>
+    <hr>
+
+    <section class="pixels">
+        <div class="pixel-cell">
+            <a href="https://www.google.ru/">
+                <img class="test1" src="../download.png" alt="">
+            </a>
+
+        </div>
+    </section>
+
+    <script src="../js/index.js"></script>
+</body>
+
+</html>
